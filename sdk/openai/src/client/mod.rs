@@ -14,6 +14,8 @@ impl OpenAIClient {
         OpenAIClient(client)
     }
 
+    pub async fn authenticate(&self) {}
+
     pub async fn get_completions(&self) -> Result<String> {
         let completion_text = self.0.get("https://www.rust-lang.org")
             .send()
